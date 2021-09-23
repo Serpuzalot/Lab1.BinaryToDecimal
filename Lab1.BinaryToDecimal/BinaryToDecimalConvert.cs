@@ -11,12 +11,12 @@ namespace Lab1.BinaryToDecimal
         private List<int> _numList;
         private int _dotPosition = int.MinValue;
 
-        bool CheckEnterData(double num)
+        private bool CheckEnterData(double num)
         {
             string str = num.ToString();
-            if (DotCheck(str) == true && NumCheck(str) == true)
+            if (num != null && num >= 0 && num != double.NaN)
             {
-                if (num != null && num >= 0)
+                if (DotCheck(str) == true && NumCheck(str) == true)
                 {
                     return true;
                 }

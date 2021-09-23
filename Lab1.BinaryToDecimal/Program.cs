@@ -13,7 +13,7 @@ namespace Lab1.BinaryToDecimal
             Console.WriteLine("Chose mode:\n1.Convert ready examples\n2.Enter the number manually\n3.Exit");
             int choice;
             bool result = int.TryParse(Console.ReadLine(), out choice);
-            while(result == false || choice <0 || choice > 4)
+            while(result == false || choice < 1 || choice > 3)
             {
                 Console.Clear();
                 Console.WriteLine("Operation input error,try again");
@@ -55,6 +55,7 @@ namespace Lab1.BinaryToDecimal
                 switch (Menu())
                 {
                     case 1:
+                        Console.Clear();
                         List<ulong> list = GetExamples();
                         foreach(var el in list)
                         {
@@ -83,5 +84,6 @@ namespace Lab1.BinaryToDecimal
             }
             
         }
+
     }
 }
